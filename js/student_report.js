@@ -1,7 +1,6 @@
 ////My Way of doing it******
 
 var message = '';
-var student;
 var searchInput = '';
 var arrayOfNames = [];
 
@@ -21,7 +20,7 @@ function makeMessage(i) {
 
 function theBiggerFunction() {
   function theFunction(theName) {
-    return theName == searchInput;
+    return theName.toLowerCase() == searchInput.toLowerCase();
   }
   return arrayOfNames.some(theFunction);
 }
@@ -34,7 +33,7 @@ while (true) {
   searchInput = prompt("Enter the name of a student in our highschool:");
   if (searchInput === null) {break;} else if (theBiggerFunction() == false){message = "This student is not in our Highschool"; print(message);}
     for (i=0; i<students.length; i++) {
-      if (searchInput.toLowerCase() == students[i].name.toLowerCase())  {makeMessage(i); print(message);}
+      if (searchInput.toLowerCase() == students[i].name.toLowerCase()) {makeMessage(i); print(message);}
     }
   }
 
@@ -45,24 +44,24 @@ while (true) {
 
 ////Threehouse way*******/
 //
-//var message = '';
-//var student;
-//var search;
+// var message = '';
+// var student;
+// var search;
 //
-//function print(message) {
+// function print(message) {
 //  var outputDiv = document.getElementById('output');
 //  outputDiv.innerHTML = message;
-//}
+// }
 //
-//function getStudentReport( student ) {
+// function getStudentReport( student ) {
 //  var report = '<h2>Student: ' + student.name + '</h2>';
 //  report += '<p>Track: ' + student.track + '</p>';
 //  report += '<p>Points: ' + student.points + '</p>';
 //  report += '<p>Achievements: ' + student.achievements + '</p>';
 //  return report;
-//}
+// }
 //
-//while (true) {
+// while (true) {
 //  search = prompt('Search student records: type a name [Jody] (or type "quit" to end)');
 //  if (search === null || search.toLowerCase() === 'quit') {
 //    break;
@@ -74,4 +73,4 @@ while (true) {
 //      print(message);
 //    }
 //  }
-//}
+// }
